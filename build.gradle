@@ -13,8 +13,9 @@ buildscript {
     }
     repositories {
         mavenCentral()
-        maven { url "http://repo.spring.io/libs-release" }
+        
         maven { url "http://repo.spring.io/milestone" }
+        maven { url "http://repo.spring.io/libs-release" }
         maven { url "http://repo.spring.io/snapshot" }
     }
 
@@ -25,8 +26,8 @@ buildscript {
 
 repositories {
     mavenCentral()
-    maven { url "http://repo.spring.io/libs-release" }
     maven { url "http://repo.spring.io/milestone" }
+    maven { url "http://repo.spring.io/libs-release" }
     maven { url "http://repo.spring.io/snapshot" }
 }
 
@@ -44,9 +45,19 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-security")
     compile("org.springframework.security:spring-security-messaging")
     compile("org.springframework.session:spring-session")
+    // https://mvnrepository.com/artifact/com.ibm.watson.developer_cloud/conversation
+	compile group: 'com.ibm.watson.developer_cloud', name: 'conversation', version: '4.0.0'
+	//compile group: 'com.atlassian.jira', name: 'jira-api', version: '6.0.4'
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.2'
     
     compile("com.github.kstyrc:embedded-redis:$redisVersion")
+    // https://mvnrepository.com/artifact/com.ibm.watson.developer_cloud/text-to-speech
+	compile group: 'com.ibm.watson.developer_cloud', name: 'text-to-speech', version: '4.0.0'
+    compile group: 'com.ibm.watson.developer_cloud', name: 'speech-to-text', version: '4.0.0'
     
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile("org.junit.jupiter:junit-jupiter-api:${jUnit5Version}")
+    // https://mvnrepository.com/artifact/com.ibm.watson.developer_cloud/speech-to-text
+   
 }
